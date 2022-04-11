@@ -1,0 +1,27 @@
+<Extra>:
+    BoxLayout:
+        orientation: 'vertical'
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            size_hint_y: None
+            height: 50
+            padding: 20
+            
+            BoxLayout:
+                Button:
+                    background_color: 'black'
+                    text: 'На главную <'
+                    on_press: root.toTheMain()
+                Label:
+                    text: ''
+                Label:
+                    text:
+    Footer:
+        BoxLayout:
+            AnchorButton:
+                text: 'Главная'
+                on_press: root.toTheMain()
+            AnchorButton:
+                text: 'Дополнительно'
+                on_press: root.toTheExtra()

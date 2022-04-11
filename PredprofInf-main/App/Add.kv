@@ -1,0 +1,60 @@
+#: import C kivy.utils.get_color_from_hex
+#:include MyWidget.kv
+<Add>:
+    BoxLayout:
+        orientation: 'vertical'
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'top'
+            size_hint_y: None
+            height: 50
+            padding: 20
+            
+            BoxLayout:
+                Button:
+                    background_color: 'black'
+                    text: 'На главную <'
+                    on_press: root.toTheMain()
+                Label:
+                    text: ''
+                Label:
+                    text:
+        ScrollView:
+            do_scroll_y: False
+            size: self.size
+        
+            GridLayout:
+                spacing: 20
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height 
+                padding: [root.width*0.1/2, 0 , root.width*0.1/2, 0]
+                InputGray:
+                    hint_text: 'Название товара'
+                    hint_text_color: 255, 255, 255, 1
+                GridLayout:
+                    size_hint_y: None
+                    height: 40
+                    cols: 2
+                    spacing: 10
+                    ButtonGray2:
+                        text: 'Дата'
+                    ButtonGray2:
+                        text: 'Категория'
+                GridLayout:
+                    size_hint_y: None
+                    height: 40
+                    cols: 2
+                    spacing: 10
+                    InputGray:
+                        hint_text: 'Сумма'
+                        hint_text_color: 255, 255, 255, 1
+                    ButtonGray2:
+                        text: 'Валюта'
+                BoxLayout:
+                    size_hint_y: None
+                    height: 50
+                    
+                    MainButtonYellow:
+                        text: 'Добавить новую операцию'
+                        color: 255, 0, 0, 1

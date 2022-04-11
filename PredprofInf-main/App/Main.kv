@@ -1,0 +1,124 @@
+<Main>:
+    ScrollView:
+        do_scroll_y: True
+        size: self.size
+        
+        GridLayout:
+            spacing: 23
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height 
+            padding: [root.width*0.1/2, 0 , root.width*0.1/2, 0]
+            BoxLayout:
+                
+                size_hint_y: None
+                height: 60
+                
+                BoxLayout:
+                    size_hint:None,None
+                    spacing: 5
+                    Image:
+                        size_hint: None,None
+                        size: root.width*0.12,50
+                BoxLayout:
+                    size_hint:None,None 
+                    spacing: 5                   
+                    ButtonBlack:
+                        text: root.Username
+                        font_size: 20
+                        size_hint: None,None
+                        size: root.width*0.05 ,50
+                BoxLayout: 
+                    size_hint:None,None
+                    spacing: 5             
+                    Label:
+                        text: 'Текущая валюта' + root.Currency
+                        size_hint: None,None
+                        size: root.width*0.47,50
+                                         
+            BoxLayout:
+                size_hint_y: None
+                orientaeion: 'vertical'
+                height:40
+                padding: 
+                
+                
+                SearchGray:
+                    
+            BoxLayout:
+                size_hint_y: None
+                height: 60
+                spacing: 10
+                ButtonGray2:
+                    text: 'Доходы за ' + root.Perriod
+                    font_size: 18
+                ButtonGray2:
+                    text: 'Расходы за ' + root.Perriod
+                    font_size: 18
+                    on_press:
+                        print('hi')
+                    
+            BoxLayout:
+                size_hint_y: None
+                height: 60
+                ButtonGray2:
+                    font_size: 18
+                    text: 'Текущий баланс : ' + root.strBalance + ' ' + root.Currency
+                    
+            BoxLayout:
+                size_hint_y: None
+                height: 40
+                spacing: 10
+                MainLabelGray2:
+                    font_size: 18
+                    font_name: 'Oswald'
+                    bold: True
+                    text: 'Последние операции'
+                    
+                ButtonGray3:
+                    text: 'Все операции'
+                    font_size: 16
+                    on_press: root.toTheAll()
+                    
+            BoxLayout:
+                size_hint_y: None
+                orientation: 'vertical'
+                spacing: 10
+                height: 50
+                OperationCard:
+                    text: root.operation + root.space + root.cost
+                    on_press: root.toTheOpMenu()
+            BoxLayout:
+                size_hint_y: None
+                orientation: 'vertical'
+                spacing: 10
+                height: 50
+                OperationCard:
+                    text: root.operation + root.space + root.cost
+                    on_press: root.toTheOpMenu()
+            BoxLayout:
+                size_hint_y: None
+                orientation: 'vertical'
+                spacing: 10
+                height: 50
+                OperationCard:
+                    text: root.operation + root.space + root.cost
+                    on_press: root.toTheOpMenu()
+            BoxLayout:
+                size_hint_y: None
+                height: 50
+                
+                MainButtonYellow2:
+                    text: 'Добавить новую операцию'
+                    font_size: 16
+                    color: 255, 0, 0, 1
+                    on_press: root.toTheAdd()
+    Footer:
+        BoxLayout:
+            AnchorButton:
+                text: 'Главная'
+                on_press: root.toTheMain()
+            AnchorButton:
+                text: 'Дополнительно'
+                on_press: root.toTheExtra()
+        

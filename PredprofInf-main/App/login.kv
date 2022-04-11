@@ -1,0 +1,54 @@
+<Login>:
+    BoxLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 20
+
+        Label:
+            text: '  Money\nManager'
+            font_size: 32
+            color: 'yellow'
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            BoxLayout:
+                orientation: 'vertical'
+
+                TextInput:
+                    id: login
+                    font_size: 20
+                    hint_text: 'Логин'
+                    height: 50
+                    size_hint_y:None
+                    background_color: (0.33, 0.33, 0.33, 1)
+                    font_name: 'Oswald'
+                    multiline: False 
+                    hint_text_color: 255, 255, 255, 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                
+                TextInput:
+                    id: password
+                    password:True
+                    font_size: 20
+                    size_hint_y: None
+                    background_color: (0.33, 0.33, 0.33, 1)
+                    font_name: 'Oswald'
+                    multiline: False 
+                    hint_text_color: 255, 255, 255, 1
+                    hint_text: 'Пароль'
+                    height: 50
+        Button:
+            size_hint_y: None
+            height: 20
+            text: 'Еще нет аккаунта? Регистрация'
+            background_color: 0, 0, 0, 0
+            on_press: root.toTheReg()
+        MainButtonYellow:
+            size_hint_y: None
+            text: 'Войти в аккаунт'
+            font_size: 24
+            height: 20
+            on_press: root.do_login(login.text, password.text)

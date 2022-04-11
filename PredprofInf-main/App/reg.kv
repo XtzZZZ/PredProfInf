@@ -1,0 +1,76 @@
+<Reg>:
+    BoxLayout:
+        id: reg_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 30
+
+        Label:
+            text: '  Money\nManager'
+            font_size: 32
+            color: 'yellow'
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Login'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+            TextInput:
+                id: login
+                multiline: False
+                font_size: 28
+
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                font_size: 28
+        
+        
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Confirm password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password2
+                multiline:False
+                password:True
+                font_size: 28
+        
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'E-mail'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: email
+                multiline: False
+                password: False
+                font_size: 28
+        
+        Button:
+            text: 'Reg!'
+            font_size: 24
+            on_press: root.do_reg(login.text, password.text, password2.text, email.text)
